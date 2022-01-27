@@ -1,0 +1,88 @@
+<hr class="p-8" />
+
+<div class="row">
+
+
+  <div class="col-12">
+    <div class="tcenter">
+      <table class="tg">
+        <thead>
+          <tr class="v-middle">
+            <th class="tg-7btt">Tiempo</th>
+            <th class="tg-7btt">Clientes</th>
+            <th class="tg-7btt">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tg-phtq">15 minutos</td>
+            <td class="tg-fer color">{{ this.Clientes15 }}</td>
+            <td class="tg-ferr color">
+              {{ this.Clientes15T | currency: "COP":" $ " }}
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-0pky">30 minutos</td>
+            <td class="tg-fer">{{ this.Clientes30 }}</td>
+            <td class="tg-ferr">
+              {{ this.Clientes30T | currency: "COP":" $ " }}
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-phtq">1 Hora</td>
+            <td class="tg-fer color">{{ this.Clientes60 }}</td>
+            <td class="tg-ferr color">
+              {{ this.Clientes60T | currency: "COP":" $ " }}
+            </td>
+          </tr>
+          <tr>
+            <td class="tg-0lax"></td>
+            <td class="tg-ferr">Total</td>
+            <td class="tg-ferr">{{ this.total | currency: "COP":" $ " }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+ <div class="row">
+  <div class="col-12">
+    <canvas
+      baseChart
+      [datasets]="this.ch1barChartData"
+      [labels]="ch1barChartLabels"
+      [options]="ch1barChartOptions"
+      [plugins]="ch1barChartPlugins"
+      [legend]="ch1barChartLegend"
+      [chartType]="ch1barChartType"
+    ></canvas>
+  </div>
+
+ </div>
+
+<hr />
+<div class="row">
+  <table fer-table class="fer-elevation-z8">
+    <thead>
+      <tr>
+        <th class="fer-th" *ngFor="let head of displayedColumns" scope="col">
+          {{ head }}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let el of dataSource; let i = index"
+        [ngClass]="{ blink: el.blink }"
+        mdbTableCol
+      >
+        <td class="tdizq">{{ el.turno }}</td>
+        <td class="tdizq">{{ el.nombre }}</td>
+        <td class="tdcenter">{{ el.telefono }}</td>
+        <td class="tdcenter">{{ el.tiempo / 60 }} min.</td>
+        <td class="tdcenter">{{ el.createdAt }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

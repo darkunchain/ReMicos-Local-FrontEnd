@@ -1,0 +1,43 @@
+
+<table fer-table class="fer-elevation-z8">
+  <thead>
+    <tr>
+      <th class="fer-th" *ngFor="let head of displayedColumns" scope="col">
+        {{ head }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let el of dataSource; let i = index" [ngClass]="{'blink':el.blink}" mdbTableCol >
+      <td
+        matBadge="{{ el.turno }}"
+        matBadgePosition="below before"
+        matBadgeColor="primary"
+        matBadgeSize="large">
+      </td>
+      <td>{{ el.nombre }}</td>
+      <td>{{ el.telefono }}</td>
+      <td><app-countdown [counter] = "el.tiempo" [idTimer] = "i"></app-countdown></td>
+      <td>
+        <button mat-flat-button color="primary" [ngClass]="{'small-btn':true,'btnChange':el.blink}" [disabled] = "!el.blink" (click)="sendReg(i,el.turno)">
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >hourglass_bottom</mat-icon>
+          Fin
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button mat-flat-button color="primary"  (click)="obtenerRegistros()">
+          <mat-icon aria-hidden="false" aria-label="Example home icon"
+            >hourglass_bottom</mat-icon>
+          Inicio
+        </button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<app-modal-button></app-modal-button>
+

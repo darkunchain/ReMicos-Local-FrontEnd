@@ -1,0 +1,8 @@
+.mat-flat-button.mat-accent, .mat-raised-button.mat-accent,.mat-raised-button.mat-success, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+  margin-right: 0.6rem;
+}
+
+
+.mat-flat-button.mat-success,.mat-raised-button.mat-success,.mat-fab.mat-success,.mat-mini-fab.mat-success {
+  background-color:#36c036bb!important
+}
