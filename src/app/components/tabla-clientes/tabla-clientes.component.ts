@@ -19,14 +19,14 @@ import { NewClientService } from '../../services/new-client.service';
 
 export class TablaClientesComponent implements OnInit {
 
-  ClientData: Cliente;
+  ClientData!: Cliente;
   arrayCliente: Cliente[] = [];
   displayedColumns: string[] = ['Ficha', 'nombre', 'telefono', 'tiempo', 'accion'];
   dataSource: Cliente[] = [];
-  counter: number;
-  idTimer: number;
-  dato: Cliente;
-  current: Date;
+  counter!: number;
+  idTimer!: number;
+  dato!: Cliente;
+  current!: Date;
 
 
   constructor(

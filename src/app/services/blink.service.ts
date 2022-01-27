@@ -6,7 +6,7 @@ import { Observable, Subject, Subscriber } from 'rxjs';
 })
 export class BlinkService {
 
-  public varBlinkService: number;
+  public varBlinkService!: number;
   private blinkId:number
   private blinkId$: Subject<number>
 

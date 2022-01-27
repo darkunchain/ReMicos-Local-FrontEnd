@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class CounterService {
 
-  CounterService:number;
+  CounterService!: number;
 
   private counterSubject = new Subject<number>();
   counterObservable = this.counterSubject.asObservable();

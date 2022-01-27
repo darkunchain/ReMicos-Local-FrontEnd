@@ -16,9 +16,9 @@ import { NewClientService } from '../../services/new-client.service';
 export class ModalFormComponent implements OnInit {
 
   form: FormGroup;
-  ClientData: Cliente;
-  counter:number
-  contador:number
+  ClientData!: Cliente;
+  counter!: number;
+  contador!: number;
 
 
 

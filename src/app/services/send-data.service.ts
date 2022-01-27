@@ -14,19 +14,16 @@ export class SendDataService {
   constructor(private http: HttpClient) { }
 
   postClient(cliente:Cliente){
-    return this.http.post<any>(
-      'http://app.remicos.com.co:8081/api/add',
-      cliente
-      )
+    return this.http.post<any>('http://192.168.20.10:8081/api/add', cliente)
   }
 
   getRegistros():Observable<Cliente[]> {
-    return this.http.get<Cliente[]>('http://app.remicos.com.co:8081/api/registros')
+    return this.http.get<Cliente[]>('http://192.168.20.10:8081/api/registros')
 
   }
 
   getIngresos():Observable<Cliente[]> {
-    return this.http.get<Cliente[]>('http://app.remicos.com.co:8081/api/ingresos')
+    return this.http.get<Cliente[]>('http://192.168.20.10:8081/api/ingresos')
 
   }
 

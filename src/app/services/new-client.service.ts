@@ -7,7 +7,7 @@ import { Cliente } from '../interfaces/cliente';
 })
 export class NewClientService {
 
-  ClientData: Cliente;
+  ClientData!: Cliente;
 
   private nuevoClienteSubject = new Subject<Cliente>();
   nuevoClienteObservable = this.nuevoClienteSubject.asObservable();

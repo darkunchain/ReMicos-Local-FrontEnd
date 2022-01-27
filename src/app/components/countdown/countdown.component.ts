@@ -14,11 +14,13 @@ import { BlinkService } from 'src/app/services/blink.service';
 })
 export class CountdownComponent implements OnInit, OnDestroy {
 
-  countDown: Subscription;
-  @Input() counter: number;
+  countDown!: Subscription;
+  @Input()
+  counter!: number;
   tick = 1000;
-  blinkStyle: number;
-  @Input() idTimer: number
+  blinkStyle!: number;
+  @Input()
+  idTimer!: number;
 
   constructor(
     private blinkService: BlinkService) {}
