@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/re-micos-local-front-end'),
+      dir: require('path').join(__dirname, './coverage/remicos-local-frontend'),
       subdir: '.',
       reporters: [
         { type: 'html' },
