@@ -76,10 +76,10 @@ export class ChartDiasActComponent implements OnInit {
       this.Clientes15p = datos.Cli15p
       this.Clientes30p = datos.Cli30p
       this.Clientes60 = datos.Cli60
-      this.Clientes15T = (datos.Cli15 * 4000) + (datos.Cli15p * 3000)
-      this.Clientes30T = (datos.Cli30 * 7000) + (datos.Cli30p * 5000)
+      this.Clientes15T = (datos.Cli15 * 5000) + (datos.Cli15p * 3000)
+      this.Clientes30T = (datos.Cli30 * 8000) + (datos.Cli30p * 6000)
       console.log(this.Clientes15T,this.Clientes30T)
-      this.Clientes60T = datos.Cli60 * 12000
+      this.Clientes60T = datos.Cli60 * 14000
       this.total = this.Clientes15T + this.Clientes30T + this.Clientes60T
       this.dataSource = datos.ClientesHoy
 
