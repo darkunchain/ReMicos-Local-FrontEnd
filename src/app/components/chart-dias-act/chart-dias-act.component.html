@@ -48,15 +48,17 @@
 
  <div class="row">
   <div class="col-12">
-    <canvas
-      baseChart
-      [datasets]="this.ch1barChartData"
-      [labels]="ch1barChartLabels"
-      [options]="ch1barChartOptions"
-      [plugins]="ch1barChartPlugins"
-      [legend]="ch1barChartLegend"
-      [chartType]="ch1barChartType"
-    ></canvas>
+    <div *ngIf="isDataLoaded">
+      <canvas
+        baseChart
+        [datasets]="this.ch1barChartData"
+        [labels]="ch1barChartLabels"
+        [options]="ch1barChartOptions"
+        [plugins]="ch1barChartPlugins"
+        [legend]="ch1barChartLegend"
+        [chartType]="ch1barChartType"
+      ></canvas>
+    </div>
   </div>
 
  </div>

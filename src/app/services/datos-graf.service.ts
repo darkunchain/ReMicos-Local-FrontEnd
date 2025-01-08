@@ -17,7 +17,7 @@ export class DatosGrafService {
 
   datosBackShare(datos: any) {
     this.datosBackServ = datos;
-    console.log('datosBackServ: ',this.datosBackServ)
+    //console.log('datosBackServ: ',this.datosBackServ)
     this.datosBack$.next(datos)
   }
 
@@ -27,7 +27,7 @@ export class DatosGrafService {
 
   datosIngresosShare(datos: any) {
     this.datosIngresos = datos;
-    console.log('datosIngresos: ',this.datosIngresos)
+    //console.log('datosIngresos: ',this.datosIngresos)
     this.datosIngresos$.next(datos)
   }
 

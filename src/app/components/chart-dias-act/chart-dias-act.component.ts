@@ -24,6 +24,7 @@ export class ChartDiasActComponent implements OnInit {
 
   displayedColumns: string[] = ['Ficha','nombre', 'telefono', 'tiempo', 'Fecha/hora'];
   dataSource: Cliente[] = [];
+  
 
 
   //%%%%%%%%%%%%%%%%  Variables grafica dia de la semana mes actual  %%%%%%%%%%%%%%%%%%%%%%%%%%%//
@@ -62,15 +63,18 @@ export class ChartDiasActComponent implements OnInit {
 
   constructor(private datosGrafService: DatosGrafService) { }
 
+  public isDataLoaded = false;
   ngOnInit() {
 
     this.datosGrafService.getDatosIngresos$().subscribe(datos => {
+      //this.ch1barChartData[0].data = [datos.Cli15 + datos.Cli15p, datos.Cli30 + datos.Cli30p, datos.Cli60];
       this.ch1barChartData = [{
         data: [datos.Cli15 + datos.Cli15p, datos.Cli30 + datos.Cli30p, datos.Cli60],
         label: 'Clientes',
         backgroundColor: this.ch1barChartBackground,
         barPercentage: 0.3
       }]
+      console.log('Datos recibidos del servicio:', datos.Cli15,datos.Cli30,datos.Cli15p,datos.Cli30p,datos.Cli60);
       this.Clientes15 = datos.Cli15
       this.Clientes30 = datos.Cli30
       this.Clientes15p = datos.Cli15p
@@ -78,12 +82,11 @@ export class ChartDiasActComponent implements OnInit {
       this.Clientes60 = datos.Cli60
       this.Clientes15T = (datos.Cli15 * 6000) + (datos.Cli15p * 3000)
       this.Clientes30T = (datos.Cli30 * 9000) + (datos.Cli30p * 5000)
-      console.log(this.Clientes15T,this.Clientes30T)
+      //console.log(this.Clientes15T,this.Clientes30T)
       this.Clientes60T = datos.Cli60 * 14000
       this.total = this.Clientes15T + this.Clientes30T + this.Clientes60T
       this.dataSource = datos.ClientesHoy
-
-
+      this.isDataLoaded = true;
     })
 
 
