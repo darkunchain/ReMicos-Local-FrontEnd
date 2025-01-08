@@ -44,7 +44,7 @@ export class TablaClientesComponent implements OnInit {
     })
 
     this.sendDataService.getIngresos().subscribe(datos =>{
-      console.log('Ingresos: ', datos)
+      //console.log('Ingresos: ', datos)
       this.datosGrafService.datosIngresosShare(datos)
     })
 
